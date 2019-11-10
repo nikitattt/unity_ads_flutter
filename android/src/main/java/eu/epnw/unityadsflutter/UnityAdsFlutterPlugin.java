@@ -10,6 +10,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 import com.unity3d.ads.IUnityAdsListener;
 import com.unity3d.ads.UnityAds;
+import com.unity3d.ads.metadata.MetaData;
 
 import java.util.HashMap;
 import java.util.Map;
