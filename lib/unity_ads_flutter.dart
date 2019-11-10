@@ -68,6 +68,14 @@ class UnityAdsFlutter {
   static Future<Null> show(final String placementId) async{
     await _channel.invokeMethod('show',{'placementId':placementId});
   }
+  /// Method to pass consent flag to Unity SDK.
+  ///
+  /// If [value] is true then user is opt in for personalized advertising.
+  ///
+  /// Made for GDPR compliance.
+  static Future<Null> setGdprMetaData(bool value) async{
+    await _channel.invokeMethod('setGdprMetaData',{'value':value});
+  }
 
 }
 

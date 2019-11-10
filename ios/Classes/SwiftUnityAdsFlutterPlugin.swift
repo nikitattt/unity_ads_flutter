@@ -53,6 +53,8 @@ public class SwiftUnityAdsFlutterPlugin: NSObject, FlutterPlugin,UnityAdsDelegat
         } else if(call.method == "show" && args["placementId"] != nil){
             UnityAds.show(self.mViewController!, placementId: args["placementId"] as! String);
             result(nil);
+        } else if(call.method == "setGdprMetaData" && args["value"] != nil){
+            result(nil);
         } else {
             result(FlutterMethodNotImplemented);
         }

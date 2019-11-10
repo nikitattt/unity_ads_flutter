@@ -64,6 +64,11 @@ public class UnityAdsFlutterPlugin implements MethodCallHandler, IUnityAdsListen
     } else if(call.method.equals("show") && call.hasArgument("placementId")){
       UnityAds.show(mActivity,call.<String>argument("placementId"));
       result.success(null);
+    } else if(call.method.equals("setGdprMetaData") && call.hasArgument("value")){
+      MetaData gdprMetaData = new MetaData(this);
+      gdprMetaData.set("gdpr.consent", call.<Boolean>argument("value"));
+      gdprMetaData.commit();
+      result.success(null);
     } else {
       result.notImplemented();
     }
